@@ -63,28 +63,28 @@ def site_map(url):
             #
             #     links.add(url + item.attrs['href'])
 
+        # else:
+        #     continue
 
-        else:
-            continue
-
-
-    if dict[url] not in dict:
 
     dict[url] = {'title': title,
              'links': links}
 
 
+    for link in links:
+
+        if link == index_url:
 
 
+            break
 
-    # site_map('http://0.0.0.0:8000/example.html')
-    # for link in links:
-    #
-    #
-    #     site_map(link)
-
+        else:
+            site_map(link)
 
     return print(dict)
+
+
+
 
 
 site_map('http://0.0.0.0:8000')
