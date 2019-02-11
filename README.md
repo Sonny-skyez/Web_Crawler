@@ -1,6 +1,7 @@
 # Web_Crawler
 
 This script takes a site URL as an argument and creates a map of that domain as a Python dictionary.
+Dictionaries contains URL, title and links within every site.
 Script will work properly with exemplary site url: http://0.0.0.0:8000
 
 ## Installation
