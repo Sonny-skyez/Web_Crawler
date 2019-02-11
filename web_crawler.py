@@ -16,6 +16,8 @@ dict = {}
 
 def site_map(url):
 
+    '''This function takes url (http://0.0.0.0:8000) as parameter
+    and creates a python dictionary. Dictionaries '''
     res = requests.get(url)
 
     # check if the page exist
@@ -38,7 +40,6 @@ def site_map(url):
 
     links = set()
 
-
     index_url = 'http://0.0.0.0:8000'
 
 
@@ -54,37 +55,35 @@ def site_map(url):
 
             links.add(index_url + item.attrs['href'])
 
-            # if str(url).endswith('.html'):
-            #
-            #     split_url = url.split('/', 3)
-            #     links.add(split_url[0] + '//' + split_url[2] + item.attrs['href'])
-            #
-            # else:
-            #
-            #     links.add(url + item.attrs['href'])
 
-        # else:
-        #     continue
 
 
     dict[url] = {'title': title,
-             'links': links}
+                'links': links}
+
+
 
 
     for link in links:
 
-        if link == index_url:
+        if link in dict:
+
+            continue
+
+        # elif link in dict:
+        #
+        #     continue
 
 
-            break
 
         else:
             site_map(link)
 
-    return print(dict)
+    return dict
 
 
 
 
 
 site_map('http://0.0.0.0:8000')
+print(dict)
