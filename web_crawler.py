@@ -6,9 +6,7 @@ Script will work properly with exemplary site:
 
 URL: http://0.0.0.0:8000'''
 
-
 import requests, bs4
-
 
 dict = {}
 
